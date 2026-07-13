@@ -2,7 +2,6 @@
 set -e
 
 export PATH="/opt/conda/bin:${PATH}"
-export HF_HUB_ENABLE_HF_TRANSFER=1
 export PYTHONUNBUFFERED=1
 
 echo "=========================================="
