@@ -27,16 +27,20 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN git lfs install \
-    && python -m pip install --upgrade pip setuptools wheel \
-    && python -m pip install \
-        jupyterlab \
-        ipykernel \
-        ipywidgets \
-        tensorboard \
-        huggingface_hub \
-        hf_transfer \
-        uv
+RUN git lfs install
+
+RUN python -m pip install --no-cache-dir --upgrade \
+    pip \
+    setuptools \
+    wheel
+
+RUN python -m pip install --no-cache-dir \
+    jupyterlab \
+    ipykernel \
+    ipywidgets \
+    tensorboard \
+    huggingface_hub \
+    uv
 
 COPY start.sh /usr/local/bin/start-musubi
 
