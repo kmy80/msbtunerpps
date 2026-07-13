@@ -29,10 +29,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN git lfs install
 
-RUN python -m pip install --no-cache-dir --upgrade \
-    pip \
-    setuptools \
-    wheel
+RUN python -m pip --version
 
 RUN python -m pip install --no-cache-dir \
     jupyterlab \
