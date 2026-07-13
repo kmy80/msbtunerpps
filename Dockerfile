@@ -30,7 +30,9 @@ RUN git lfs install
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
 
 # Jupyterだけをコンテナ内の既存Pythonへ導入
-RUN python -m pip install --no-cache-dir \
+RUN python -m pip install \
+    --break-system-packages \
+    --no-cache-dir \
     jupyterlab \
     ipykernel \
     ipywidgets
